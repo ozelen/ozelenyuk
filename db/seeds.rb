@@ -5,3 +5,17 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+ContentType.delete_all
+ContentType.create(
+    [{name:'page'}, {name:'section'}, {name:'project'}, {name:'technology'}]
+)
+
+Language.delete_all
+Language.create(
+    [
+        {ident:'en', name:'English'},
+        {ident:'ua', name:'Ukrainian'},
+        {ident:'ru', name:'Russian'}
+    ]
+)

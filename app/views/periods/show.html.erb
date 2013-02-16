@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Since:</b>
+  <%= @period.since %>
+</p>
+
+<p>
+  <b>Till:</b>
+  <%= @period.till %>
+</p>
+
+
+<%= link_to 'Edit', edit_period_path(@period) %> |
+<%= link_to 'Back', periods_path %>
