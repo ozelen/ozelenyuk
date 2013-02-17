@@ -1,0 +1,8 @@
+<li id="node_<%= node.id %>">
+  <div class="title"><%= link_to node.name, node %></div>
+  <div class="actions">
+    <%= link_to 'Show', node %>
+    <%= link_to 'Edit', edit_node_path(node) %>
+    <%= link_to 'Destroy', node, method: :delete, remote: true %>
+  </div>
+</li>

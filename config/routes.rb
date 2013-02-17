@@ -1,18 +1,12 @@
 Oleksa::Application.routes.draw do
-  resources :languages
-
-
-  resources :periods
-
-
-  resources :contents
-
-
-  resources :content_types
-
-
-  resources :nodes
-
+  scope '(:locale)' do
+    resources :pages
+    resources :languages
+    resources :periods
+    resources :contents
+    resources :content_types
+    resources :nodes
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

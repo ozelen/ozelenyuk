@@ -18,6 +18,7 @@ class NodesController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @node }
+      format.js
     end
   end
 
@@ -50,6 +51,7 @@ class NodesController < ApplicationController
         format.html { render action: "new" }
         format.json { render json: @node.errors, status: :unprocessable_entity }
       end
+      format.js
     end
   end
 
@@ -78,6 +80,7 @@ class NodesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to nodes_url }
       format.json { head :no_content }
+      format.js
     end
   end
 end

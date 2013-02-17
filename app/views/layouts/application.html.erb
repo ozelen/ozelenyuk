@@ -8,6 +8,12 @@
 </head>
 <body>
 
+<div class="locale">
+  <%= link_to_unless_current "English", locale: "en" %> |
+  <%= link_to_unless_current "Ukrainian", locale: "ua" %> |
+  <%= link_to_unless_current "Russian", locale: "ru" %>
+</div>
+
 <%= yield %>
 
 </body>

@@ -1,0 +1,6 @@
+<% if @node.new_record? %>
+  $("input#node_name").effect('highlight', {color:'red'});
+<% else %>
+  $('ul#nodes').append("<%= escape_javascript(render @node) %>");
+  $('li#<%= dom_id(@node) %>').effect('highlight');
+<% end %>
