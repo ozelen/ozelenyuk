@@ -1,4 +1,16 @@
 Oleksa::Application.routes.draw do
+  resources :languages
+
+
+  resources :node_types
+
+
+  resources :nodes
+
+
+  resources :posts
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
