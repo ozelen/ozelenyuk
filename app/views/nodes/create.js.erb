@@ -1,6 +1,9 @@
+var errors_div = $('#node-create-form .errors');
 <% if @node.new_record? %>
-  $("input#node_name").effect('highlight', {color:'red'});
+    $("input#node_name").effect('highlight', {color:'red'});
+  errors_div.html('<ul><% @node.errors.full_messages.each do |msg| %><li><%= escape_javascript(msg) %></li><% end %></ul>');
 <% else %>
-  $('ul#nodes').append("<%= escape_javascript(render @node) %>");
+  $('ul#nodes').append("<%= escape_javascript(render @node) %>")
+  errors_div.html('');
   $('li#<%= dom_id(@node) %>').effect('highlight');
 <% end %>

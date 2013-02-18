@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130217135641) do
+ActiveRecord::Schema.define(:version => 20130218132100) do
 
   create_table "content_types", :force => true do |t|
     t.string   "name"
@@ -34,30 +34,23 @@ ActiveRecord::Schema.define(:version => 20130217135641) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "node_translations", :force => true do |t|
+    t.integer  "node_id"
+    t.string   "locale"
+    t.string   "title"
+    t.text     "content"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "node_translations", ["locale"], :name => "index_node_translations_on_locale"
+  add_index "node_translations", ["node_id"], :name => "index_node_translations_on_node_id"
+
   create_table "nodes", :force => true do |t|
     t.string   "name"
     t.integer  "parent_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "page_translations", :force => true do |t|
-    t.integer  "page_id"
-    t.string   "locale"
     t.string   "title"
-    t.string   "content"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  add_index "page_translations", ["locale"], :name => "index_page_translations_on_locale"
-  add_index "page_translations", ["page_id"], :name => "index_page_translations_on_page_id"
-
-  create_table "pages", :force => true do |t|
-    t.integer  "parent_id"
-    t.string   "name"
-    t.string   "title"
-    t.string   "content"
+    t.text     "content"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
