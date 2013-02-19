@@ -36,8 +36,9 @@ class NodesController < ApplicationController
   # GET /nodes/1/edit
   def edit
     @node = Node.find(params[:id])
+    @languages = Language.all;
     respond_to do |format|
-      format.html
+#      format.html
       format.js
     end
   end

@@ -4,3 +4,25 @@
 textarea#node_content {
   width: 100%;
 }
+
+ul.locale {
+  float: right;
+  li {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    vertical-align: middle;
+    a {
+      display: block;
+      width: 20px;
+      height: 20px;
+      text-align: center;
+      vertical-align: middle;
+      background: #e78f08;
+      color: #ffffff;
+      font-weight: bold;
+      text-decoration: none;
+    }
+  }
+}

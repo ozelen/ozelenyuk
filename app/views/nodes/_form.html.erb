@@ -1,8 +1,13 @@
 <%= form_for(@node, remote: true) do |f| %>
+  <ul class="locale">
+  <% @languages.each do |language| %>
+    <li><%= link_to_unless_current language.ident, edit_node_path(@node, locale: language.ident), remote: true %></li>
+  <% end %>
+  </ul>
+
   <% if @node.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@node.errors.count, "error") %> prohibited this node from being saved:</h2>
-
       <ul>
       <% @node.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
