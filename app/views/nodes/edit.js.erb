@@ -1,9 +1,1 @@
-var edit_dialog = $('#edit_node_dialog')
-//
-// TODO: normalize output
-
-edit_dialog.dialog({title: '<%= escape_javascript @node.title %>', width: 600})
-edit_dialog.find("ul").html('')<% @node.translations.each do |t| %>.append('<li><%= link_to t.locale, edit_node_path(@node, locale: t.locale) %></li>')<% end %>
-edit_dialog.find('div.tabs').refresh()
-//    .html('<%= escape_javascript render 'form' %>');
-
+$('#edit_node_dialog').dialog({title: '<%= escape_javascript @node.title %>', width: 600}).html('<%= escape_javascript render 'form' %>');

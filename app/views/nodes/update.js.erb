@@ -1,0 +1,2 @@
+$('#edit_node_dialog').dialog("close");
+$('#node_<%= @node.id %>').replaceWith("<%= escape_javascript( render @node ) %>");
