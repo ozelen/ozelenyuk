@@ -1,5 +1,7 @@
 Oleksa::Application.routes.draw do
+
   scope '(:locale)' do
+    devise_for :users, path_names: {sign_in: "login", sign_out: "logout"}
     resources :pages
     resources :languages
     resources :periods
